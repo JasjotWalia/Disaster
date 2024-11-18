@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgb(142, 255, 255) 0%, rgb(128, 255, 255) 100%);
+            color: #333;
+            text-align: center;
+            position: relative; /* Added to position the anchor */
+        }
+
+        /* Message styles */
+        .thank-you-message {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: fadeInText 1.5s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+            margin: 20px;
+        }
+
+        /* Button styles */
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: white;
+            background-color: #27ae60;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            position: absolute; /* Absolute positioning */
+            bottom: 20px; /* Distance from the bottom */
+            right: 20px; /* Distance from the right */
+        }
+
+        .home-button:hover {
+            background-color: #219150;
+        }
+
+        /* Animation for text */
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .thank-you-message {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-message">
+        THANK YOU FOR YOUR FEEDBACK...
+    </div>
+    <a href="index.html" class="home-button">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management and Alert System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            background: rgb(255, 128, 0);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        h2 {
+            color: #100c0c7a;
+            margin: 15px 0;
+            border-bottom: 2px solid #100c0c7a;
+            padding-bottom: 5px;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        section, .ndma-data {
+            flex: 1 1 300px;
+            min-width: 280px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        section:hover, .ndma-data:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            display: block;
+            margin: 5px 0;
+            color: rgb(255, 0, 0);
+            text-decoration: none;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            color: rgb(128, 0, 0);
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: rgb(0, 0, 0);
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 20px;
+            border-top: 2px solid rgb(0, 0, 0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            main {
+                padding: 15px;
+                flex-direction: column;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            p, a {
+                font-size: 0.9em;
+            }
+
+            section, .ndma-data {
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Disaster Response Portal</h1>
+    </header>
+    <main>
+        <section id="disaster-info">
+            <h2>Disaster Information</h2>
+            <p>Upcoming disasters will be appeared here...</p>
+            <ul>
+                <li><a href="emergency.html">For Emergency Numbers and List of Hospitals click here</a></li>
+            </ul>
+        </section>
+        
+        <section id="resources">
+            <h2>Resources & Alerts</h2>
+            <p>Emergency preparedness guides, resources, and tools will be available here.</p>
+            <ul>
+                <li><a href="cyclone.html">About Cyclones</a></li>
+                <li><a href="earthquake.html">About Earthquakes</a></li>
+                <li><a href="flood.html">About Floods</a></li>
+                <li><a href="drought.html">About Droughts</a></li>
+                <li><a href="landslide.html">About Landslides</a></li>
+            </ul>
+            <a href="chatbot.html">ChatBot</a>
+        </section>
+        
+        <section id="feedback-system">
+            <h2>Feedbacks</h2>
+            <p>Provide your feedback here:</p>
+            <a href="feedback.html">Click here</a>
+        </section>
+        
+        <!-- New Divs for Real-Time NDMA Data -->
+        <div class="ndma-data" id="ndma-updates">
+            <h2>Real-Time Updates</h2>
+            <p>Latest updates from NDMA regarding ongoing disasters.</p>
+            <p>Data will be displayed here...</p>
+        </div>
+
+        <div class="ndma-data" id="ndma-warnings">
+            <h2>NDMA Warnings</h2>
+            <p>Real-time warnings and alerts from NDMA.</p>
+            <p>Data will be displayed here...</p>
+        </div>
+    </main>
+    <footer>
+        <p>2024 Disaster Response Portal</p>
+    </footer>
+</body>
+
+</html>

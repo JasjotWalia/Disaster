@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="stylesa.css">
+    <style>
+        /* Container Styling */
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styling */
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1a5d80;
+        }
+
+        /* Image Styling */
+        .feedback-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Provide Feedback Here</h2>
+        <form action="addfeedback" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required aria-label="Name"><br>
+
+            <label for="phone_no">Phone No.:</label>
+            <input type="tel" id="phone_no" name="phone_no" required pattern="[0-9]{10}"
+                title="Please enter a 10-digit phone number" aria-label="Phone Number"><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required aria-label="Address"><br>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" required aria-label="Feedback"></textarea><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <img src="https://www.bronkhorst.com/getmedia/a544790d-0950-4e68-bbf2-c19cbd0a136d/Your-Feedback-Matters.png?width=558&hash=yVkKvDAc%2FBWi%2BK0QCDy5l4l5ASK583yjFBxyynklFpU%3D"
+            alt="Your Feedback Matters" class="feedback-image">
+    </div>
+</body>
+
+</html>

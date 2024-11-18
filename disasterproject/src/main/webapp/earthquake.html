@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquakes</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h3 {
+            color: #2980b9;
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            text-align: justify;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        td:nth-child(2) {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .earthquake-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Button styles */
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: white;
+            background-color: #27ae60;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            position: static; /* Absolute positioning */
+            bottom: 20px; /* Distance from the bottom */
+            right: 20px; /* Distance from the right */
+        }
+
+        .home-button:hover {
+            background-color: #219150;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.4em;
+            }
+
+            table, th, td {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Earthquakes</h2>
+        <p>
+            An earthquake is a sudden and violent shaking of the Earth's surface, typically caused by the movement of
+            tectonic plates beneath the Earth's crust. This movement releases energy in the form of seismic waves,
+            leading to ground shaking and potentially causing damage to buildings, infrastructure, and landscapes.
+            Earthquakes can vary in intensity and magnitude, with larger earthquakes capable of causing widespread
+            destruction and loss of life.
+        </p>
+
+        <h3>Do's & Don'ts</h3>
+        <p>Here are some do's and don'ts to keep in mind during an earthquake:</p>
+
+        <table class="do-dont-table">
+            <tr>
+                <th>Do's</th>
+                <th>Don'ts</th>
+            </tr>
+            <tr>
+                <td>
+                    <b>1. Drop, Cover, and Hold On:</b> Protect yourself from falling objects.<br>
+                    <b>2. Stay Indoors if Inside:</b> Stand under door frames or sturdy furniture.<br>
+                    <b>3. Prepare an Emergency Kit:</b> Include essentials like food, water, and first aid.<br>
+                    <b>4. Secure Heavy Objects:</b> Anchor furniture and other heavy items to walls.<br>
+                    <b>5. Identify Safe Spots:</b> Know safe areas in each room where you can shelter.<br>
+                    <b>6. Listen to Emergency Broadcasts:</b> Stay updated through radios or official apps.
+                </td>
+                <td>
+                    <b>1. Don’t Run Outside During Shaking:</b> Falling debris can be more dangerous than staying inside.<br>
+                    <b>2. Avoid Using Elevators:</b> Power outages may trap you inside.<br>
+                    <b>3. Don’t Stand Near Windows or Glass:</b> These can shatter and cause injuries.<br>
+                    <b>4. Don’t Use Open Flames:</b> Gas leaks may occur, which can ignite.<br>
+                    <b>5. Avoid Parking Under Bridges:</b> Stay clear of overpasses and bridges during or after an earthquake.<br>
+                    <b>6. Don’t Panic:</b> Try to stay calm and focused on safety procedures.
+                </td>
+            </tr>
+        </table>
+
+        <p>By following these do's and don'ts, you can help stay safe during an earthquake and reduce the risk of
+            injuries or property damage.</p>
+
+        <img src="https://static.timesofisrael.com/www/uploads/2023/03/33AN3EN-highres.jpg" alt="Damaged building and street after an earthquake" 
+            class="earthquake-image">
+    </div>
+    <a href="index.html" class="home-button">Back to Home</a>
+</body>
+
+</html>

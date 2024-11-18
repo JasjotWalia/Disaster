@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Emergency Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+        }
+        .chat-container {
+            width: 400px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .chat-header {
+            background-color: #0072ff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .chat-box div {
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+        .user {
+            background-color: #cce5ff;
+            text-align: right;
+            margin-left: auto;
+            width: fit-content;
+        }
+        .bot {
+            background-color: #e9ecef;
+            text-align: left;
+            width: fit-content;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: #ffffff;
+            border-top: 1px solid #ddd;
+        }
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">Disaster Emergency Chatbot</div>
+    <div class="chat-box" id="chatBox">
+        <div class="bot">Hello! How may I help you? Start by typing the name of a disaster, like "cyclone" or "flood".</div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    const disasterInfo = {
+        "cyclone": `
+            A cyclone is a large scale air mass that rotates around a strong center of low atmospheric pressure.
+            Evacuation tips:
+            - Stay indoors, away from windows and doors.
+            - Head to a shelter or higher ground if you're near the coast.
+            - Follow local emergency warnings.
+        `,
+        "landslide": `
+            A landslide is the movement of rock, earth, or debris down a sloped section of land.
+            Evacuation tips:
+            - Move to higher ground away from potential slide areas.
+            - Stay away from river valleys or areas below steep slopes.
+            - Follow local emergency updates for safe evacuation routes.
+        `,
+        "drought": `
+            A drought is a prolonged period of abnormally low rainfall, leading to water shortages.
+            Evacuation tips:
+            - Stay hydrated and conserve water.
+            - If necessary, evacuate to areas with better water resources.
+            - Follow local advisories for food and water distribution.
+        `,
+        "flood": `
+            Floods are caused by excessive rainfall, river overflow, or other water flow disruptions.
+            Evacuation tips:
+            - Move to higher ground immediately.
+            - Avoid walking or driving through floodwaters.
+            - Listen to official evacuation orders and stay informed about road closures.
+        `,
+        "earthquake": `
+            An earthquake is the shaking of the surface of the earth resulting from a sudden release of energy.
+            Evacuation tips:
+            - Drop, cover, and hold on during shaking.
+            - Once the shaking stops, evacuate to an open area away from buildings and power lines.
+            - Follow the designated evacuation routes and listen to authorities.
+        `
+    };
+
+    function sendMessage() {
+        const userInput = document.getElementById("userInput").value.trim().toLowerCase();
+        const chatBox = document.getElementById("chatBox");
+
+        if (!userInput) return; // Prevent empty messages
+
+        // Display user message
+        const userMessage = document.createElement("div");
+        userMessage.classList.add("user");
+        userMessage.textContent = userInput;
+        chatBox.appendChild(userMessage);
+
+        // Generate bot response
+        let botResponseText;
+        if (disasterInfo[userInput]) {
+            botResponseText = disasterInfo[userInput];
+        } else {
+            botResponseText = "I'm sorry, I don't have information on that topic. Please ask about cyclone, landslide, drought, flood, or earthquake.";
+        }
+
+        // Display bot response
+        const botMessage = document.createElement("div");
+        botMessage.classList.add("bot");
+        botMessage.textContent = botResponseText;
+        chatBox.appendChild(botMessage);
+
+        // Scroll chat box to latest message
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        // Clear input field
+        document.getElementById("userInput").value = "";
+    }
+</script>
+
+</body>
+</html>
