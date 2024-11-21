@@ -88,7 +88,7 @@
 <div class="chat-container">
     <div class="chat-header">Disaster Emergency Chatbot</div>
     <div class="chat-box" id="chatBox">
-        <div class="bot">Hello! How may I help you? Start by typing the name of a disaster, like "cyclone" or "flood".</div>
+        <div class="bot">Hello! How may I help you? Start by typing the name of a disaster, like "cyclone," "flood," "wildfire," etc.</div>
     </div>
     <div class="chat-input">
         <input type="text" id="userInput" placeholder="Type your message..." />
@@ -98,41 +98,41 @@
 
 <script>
     const disasterInfo = {
-        "cyclone": `
-            A cyclone is a large scale air mass that rotates around a strong center of low atmospheric pressure.
-            Evacuation tips:
-            - Stay indoors, away from windows and doors.
-            - Head to a shelter or higher ground if you're near the coast.
-            - Follow local emergency warnings.
-        `,
-        "landslide": `
-            A landslide is the movement of rock, earth, or debris down a sloped section of land.
-            Evacuation tips:
-            - Move to higher ground away from potential slide areas.
-            - Stay away from river valleys or areas below steep slopes.
-            - Follow local emergency updates for safe evacuation routes.
-        `,
-        "drought": `
-            A drought is a prolonged period of abnormally low rainfall, leading to water shortages.
-            Evacuation tips:
-            - Stay hydrated and conserve water.
-            - If necessary, evacuate to areas with better water resources.
-            - Follow local advisories for food and water distribution.
-        `,
-        "flood": `
-            Floods are caused by excessive rainfall, river overflow, or other water flow disruptions.
-            Evacuation tips:
-            - Move to higher ground immediately.
-            - Avoid walking or driving through floodwaters.
-            - Listen to official evacuation orders and stay informed about road closures.
-        `,
-        "earthquake": `
-            An earthquake is the shaking of the surface of the earth resulting from a sudden release of energy.
-            Evacuation tips:
-            - Drop, cover, and hold on during shaking.
-            - Once the shaking stops, evacuate to an open area away from buildings and power lines.
-            - Follow the designated evacuation routes and listen to authorities.
-        `
+        "cyclone": `Cyclone is a large-scale air mass that rotates around a strong center of low atmospheric pressure.
+        Evacuation tips:
+        - Stay indoors, away from windows and doors.
+        - Head to a shelter or higher ground if you're near the coast.
+        - Follow local emergency warnings.`,
+        
+        "landslide": `Landslide is the movement of rock, earth, or debris down a sloped section of land.
+        Evacuation tips:
+        - Move to higher ground away from potential slide areas.
+        - Stay away from river valleys or areas below steep slopes.
+        - Follow local emergency updates for safe evacuation routes.`,
+        
+        "drought": `Drought is a prolonged period of abnormally low rainfall, leading to water shortages.
+        Evacuation tips:
+        - Stay hydrated and conserve water.
+        - If necessary, evacuate to areas with better water resources.
+        - Follow local advisories for food and water distribution.`,
+        
+        "flood": `Floods are caused by excessive rainfall, river overflow, or other water flow disruptions.
+        Evacuation tips:
+        - Move to higher ground immediately.
+        - Avoid walking or driving through floodwaters.
+        - Listen to official evacuation orders and stay informed about road closures.`,
+        
+        "earthquake": `Earthquake is the shaking of the surface of the earth resulting from a sudden release of energy.
+        Evacuation tips:
+        - Drop, cover, and hold on during shaking.
+        - Once the shaking stops, evacuate to an open area away from buildings and power lines.
+        - Follow the designated evacuation routes and listen to authorities.`,
+        
+        "wildfire": `Wildfires are large, uncontrolled fires that spread rapidly in forests, grasslands, or other areas.
+        Evacuation tips:
+        - Follow evacuation orders immediately.
+        - Stay low to avoid smoke inhalation.
+        - Protect yourself with wet cloths or masks and move away from the fire area.`
     };
 
     function sendMessage() {
@@ -149,10 +149,13 @@
 
         // Generate bot response
         let botResponseText;
-        if (disasterInfo[userInput]) {
-            botResponseText = disasterInfo[userInput];
+        const disasterKeys = Object.keys(disasterInfo);
+        const matchedDisaster = disasterKeys.find(key => userInput.includes(key));
+
+        if (matchedDisaster) {
+            botResponseText = disasterInfo[matchedDisaster];
         } else {
-            botResponseText = "I'm sorry, I don't have information on that topic. Please ask about cyclone, landslide, drought, flood, or earthquake.";
+            botResponseText = "I'm sorry, I don't have information on that topic. Please ask about cyclone, landslide, drought, flood, earthquake, or wildfire.";
         }
 
         // Display bot response
